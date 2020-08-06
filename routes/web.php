@@ -13,5 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('t', 'TestController@index');
+Route::get('/', function () {
+    return 'Use route: /user/{mediumusername} to make svg';
+});
 Route::get('/user/{username}', 'ApiController@index');
