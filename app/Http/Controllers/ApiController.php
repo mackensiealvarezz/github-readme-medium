@@ -19,8 +19,10 @@ class ApiController extends Controller
         $xml = simplexml_load_string($response->getBody(), 'SimpleXMLElement', LIBXML_NOCDATA);
         $json = json_encode($xml);
         $data = json_decode($json, TRUE);
-
         //parse data
-        return view('svg', ['data' => $data]);
+        return response(view('svg', ['data' => $data]))
+            ->withHeaders([
+                'Content-Type' => 'image/svg+xml',
+            ]);
     }
 }
