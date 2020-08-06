@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('t', 'TestController@index');
+Route::get('/user/{username}', 'ApiController@index');
